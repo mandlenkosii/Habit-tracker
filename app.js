@@ -6,7 +6,7 @@
 // Key used to save/load habits from localStorage
 const STORAGE_KEY = 'daily-habits-v1';
 
-// The habits array is the single source of truth.
+// This is the habits array
 // Each habit looks like:
 //   { id, name, createdAt, completions[] }
 // where completions is an array of "YYYY-MM-DD" date strings.
