@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daily Habits</title>
+
+  <!-- Fonts: Playfair Display (headings) · Nunito (body) · Courier Prime (data) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Nunito:wght@400;500;600;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="app-wrapper">
+
+    <!-- Header -->
+    <header class="app-header">
+      <div class="header-content">
+        <div class="header-title-group">
+          <h1 class="app-title">Daily Habits</h1>
+          <p class="app-date" id="app-date"></p>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main -->
+    <main class="app-main">
+
+      <!-- Add a habit -->
+      <section class="add-habit-section">
+        <div class="add-habit-form">
+          <input
+            type="text"
+            id="habit-input"
+            class="habit-input"
+            placeholder="Add a new habit..."
+            maxlength="60"
+            autocomplete="off"
+            aria-label="New habit name"
+          />
+          <button id="add-btn" class="add-btn" aria-label="Add habit">
+            <span class="add-btn-icon" aria-hidden="true">+</span>
+            <span class="add-btn-text">Add Habit</span>
+          </button>
+        </div>
+        <p class="input-error" id="input-error" role="alert" aria-live="polite"></p>
+      </section>
+
+      <!-- Two-column layout -->
+      <div class="content-grid">
+
+        <!-- Habits list -->
+        <section class="habits-section" aria-label="Habits list">
+          <div class="section-header">
+            <h2 class="section-title">Today's Habits</h2>
+            <span class="habit-count" id="habit-count" aria-live="polite">0 habits</span>
+          </div>
+
+          <div class="habits-list" id="habits-list" role="list"></div>
+
+          <div class="empty-state" id="empty-state">
+            <span class="empty-icon" aria-hidden="true">○</span>
+            <p class="empty-title">No habits added yet</p>
+            <p class="empty-sub">Type a habit name above and click Add Habit.</p>
+          </div>
+        </section>
+
+        <!-- Summary sidebar -->
+        <aside class="summary-panel" aria-label="Progress summary">
+          <h2 class="summary-title">Today's Progress</h2>
+
+          <!-- SVG progress ring -->
+          <div class="summary-ring-wrap" aria-hidden="true">
+            <svg class="summary-ring" viewBox="0 0 120 120" width="120" height="120">
+              <circle class="ring-bg"   cx="60" cy="60" r="50" />
+              <circle class="ring-fill" id="ring-fill" cx="60" cy="60" r="50"
+                stroke-dasharray="314.16" stroke-dashoffset="314.16" />
+            </svg>
+            <div class="ring-label">
+              <span class="ring-percent" id="ring-percent">0%</span>
+              <span class="ring-sub">done</span>
+            </div>
+          </div>
+
+          <!-- Stat tiles -->
+          <div class="summary-stats" aria-label="Statistics">
+            <div class="stat-card">
+              <span class="stat-value" id="stat-completed">0</span>
+              <span class="stat-label">Completed</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-value" id="stat-total">0</span>
+              <span class="stat-label">Total</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-value" id="stat-best-streak">0</span>
+              <span class="stat-label">Best Streak</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-value" id="stat-on-streak">0</span>
+              <span class="stat-label">On Streak</span>
+            </div>
+          </div>
+
+          <p class="summary-status" id="summary-status"></p>
+        </aside>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
