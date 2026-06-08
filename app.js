@@ -1,6 +1,6 @@
 /*
  * app.js — Daily Habit Tracker
- * Vanilla JS only: no libraries or frameworks
+ * JS only: no libraries or frameworks
  */
 
 'use strict';
