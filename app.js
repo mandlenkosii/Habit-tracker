@@ -1,9 +1,7 @@
 /*
  * app.js — Daily Habit Tracker
- * Vanilla JS only: no libraries or frameworks
+ *  JS only: no libraries or frameworks
  */
-
-'use strict';
 
 // Key used to save/load habits from localStorage
 const STORAGE_KEY = 'daily-habits-v1';
